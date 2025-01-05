@@ -1,3 +1,8 @@
+This is a fork created for personal use in my own game engine. Im implementing a few improvements i need the library to have here.
+Things implemented:
+
+* Protected voices now have priority for activation, to avoid cutting off important background songs like OST
+
 SoLoud
 ======
 
