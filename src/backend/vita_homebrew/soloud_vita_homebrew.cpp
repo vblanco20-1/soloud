@@ -28,9 +28,7 @@ freely, subject to the following restrictions:
 #include "soloud.h"
 #include "soloud_thread.h"
 
-#include <psp2/audioout.h>
-#include <psp2/kernel/threadmgr.h>
-#include <stdio.h>
+
 
 #if !defined(WITH_VITA_HOMEBREW)
 
@@ -43,7 +41,9 @@ namespace SoLoud
 };
 
 #else
-
+#include <psp2/audioout.h>
+#include <psp2/kernel/threadmgr.h>
+#include <stdio.h>
 namespace SoLoud
 {
 	struct VitaData {
