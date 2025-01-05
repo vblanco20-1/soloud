@@ -149,8 +149,8 @@ if (SOLOUD_BACKEND_NULL)
 endif()
 
 if (SOLOUD_BACKEND_SDL2)
-	find_package (SDL2 REQUIRED)
-	include_directories (${SDL2_INCLUDE_DIR})
+	#find_package (SDL2 REQUIRED)
+	#include_directories (${SDL2_INCLUDE_DIR})
 	add_definitions (-DWITH_SDL2_STATIC)
 
 	set (BACKENDS_SOURCES
@@ -160,7 +160,7 @@ if (SOLOUD_BACKEND_SDL2)
 
 	set (LINK_LIBRARIES
 		${LINK_LIBRARIES}
-		${SDL2_LIBRARY}
+		SDL2::SDL2
 	)
 
 endif()
@@ -295,6 +295,6 @@ if (SOLOUD_STATIC)
 endif()
 
 target_link_libraries (${TARGET_NAME} ${LINK_LIBRARIES})
-
+target_include_directories(${TARGET_NAME} PUBLIC ${HEADER_PATH})
 include (Install)
 INSTALL(FILES ${TARGET_HEADERS} DESTINATION include/${TARGET_NAME})
